@@ -41,65 +41,60 @@
   // OFFCANVAS PUBLIC CLASS DEFINITION
   // =================================
 
-  var OffCanvas = function (element, target, options) {
+  var EnkOffCanvas = function (element, target, options) {
       this.$element = $(element)
       this.$target = target
-      this.options  = $.extend({}, OffCanvas.DEFAULTS, options)
+      this.options  = $.extend({}, EnkOffCanvas.DEFAULTS, options)
   }
 
-  OffCanvas.DEFAULTS = {
+  EnkOffCanvas.DEFAULTS = {
     toggle: true,
-    placement: 'auto',
     autohide: true,
-    recalc: true,
-    disableScrolling: true,
-    modal: false
   }
   
-  OffCanvas.prototype.toggle = function () {
+  EnkOffCanvas.prototype.toggle = function () {
     console.log('toggle');
 	
-    this.$target.toggleClass("collapsed");	
+	this.$target.toggleClass("collapsed");	
 	this.$element.toggleClass("col-md-12 col-md-9");
-	
   }
 
   // OFFCANVAS PLUGIN DEFINITION
   // ==========================
 
-  var old = $.fn.offcanvas
+  var old = $.fn.enkoffcanvas
 
-  $.fn.offcanvas = function (option) {
+  $.fn.enkoffcanvas = function (option) {
       return this.each(function () {
           var $this = $(this)
-          var data = $this.data('bs.offcanvas')
-          var options = $.extend({}, OffCanvas.DEFAULTS, $this.data(), typeof option === 'object' && option)
+          var data = $this.data('bs.enkoffcanvas')
+          var options = $.extend({}, EnkOffCanvas.DEFAULTS, $this.data(), typeof option === 'object' && option)
 
-          if (!data) $this.data('bs.offcanvas', (data = new OffCanvas(this, $(option.source), options)))
+          if (!data) $this.data('bs.enkoffcanvas', (data = new EnkOffCanvas(this, $(option.source), options)))
           if (typeof option === 'string') data[option]()
       })
   }
 
-  $.fn.offcanvas.Constructor = OffCanvas
+  $.fn.enkoffcanvas.Constructor = EnkOffCanvas
 
 
   // OFFCANVAS NO CONFLICT
   // ====================
 
-  $.fn.offcanvas.noConflict = function () {
-    $.fn.offcanvas = old
+  $.fn.enkoffcanvas.noConflict = function () {
+    $.fn.enkoffcanvas = old
     return this
   }
 
   // OFFCANVAS DATA-API
   // =================
 
-  $(document).on('click.bs.offcanvas.data-api', '[data-toggle=offcanvas]', function (e) {
+  $(document).on('click.bs.enkoffcanvas.data-api', '[data-toggle=enkoffcanvas]', function (e) {
     var $this   = $(this), href
     var target  = $this.attr('data-target')
         || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
     var $canvas = $(target)
-    var data    = $canvas.data('bs.offcanvas')
+    var data    = $canvas.data('bs.enkoffcanvas')
     var option  = data ? 'toggle' : $this.data()
 
     e.preventDefault();
@@ -108,7 +103,7 @@
     //$canvas.toggle();
 
     if (data) data.toggle()
-      else $canvas.offcanvas(option)
+      else $canvas.enkoffcanvas(option)
   })
 
 }(window.jQuery);
