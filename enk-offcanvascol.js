@@ -100,10 +100,10 @@
     e.preventDefault();
     e.stopPropagation()
 
-    //$canvas.toggle();
-
-    if (data) data.toggle()
-      else $canvas.enkoffcanvas(option)
+    if (!data) {
+	    $canvas.enkoffcanvas(option)
+    }
+    data.toggle()
   })
 
 }(window.jQuery);
