@@ -102,6 +102,7 @@
 
     if (!data) {
 	    $canvas.enkoffcanvas(option)
+	    data = $canvas.data('bs.enkoffcanvas')
     }
     data.toggle()
   })
