@@ -1,0 +1,23 @@
+.enk-offcanvas-container {
+  overflow-x: hidden;
+}
+
+.enk-offcanvas-content {
+  transition: width 0.3s ease;
+}
+
+.enk-offcanvas-sidebar {
+  transition: margin 0.3s ease;
+}
+
+.enk-offcanvas-collapsed {
+  margin-right: -25%;
+}
+
+.enk-offcanvas-panel-hidden {
+  display: none;
+}
+
+.enk-offcanvas-panel-visible {
+  display: block;
+}
