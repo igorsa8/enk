@@ -1,26 +1,3 @@
-/* USAGE
-
-<button type="button" data-toggle="enkoffcanvas" data-target="#content" data-source="#sidebar" data-canvas="#p1">
-        Panel 1
-    </button>
-    
-    <button type="button" data-toggle="enkoffcanvas" data-target="#content" data-source="#sidebar" data-canvas="#p2">
-        Panel 2
-    </button>
-
-<div class="row enk-offcanvas-container" id="row-main">
-        <div class="col-xs-12 col-md-12 enk-offcanvas-content" id="content">
-        </div>
-        <div class="col-xs-3 col-md-3 enk-offcanvas-sidebar enk-offcanvas-collapsed" id="sidebar">
-          <div id="p1" class="panel-hidden">p1</div>
-          <div id="p2" class="panel-hidden">p2</div>
-          <div id="p3" class="panel-hidden">p3</div>
-        </div>
-    </div>
-
-*/
-
-
 + function($) {
   "use strict";
 
@@ -81,7 +58,7 @@
       var data = $this.data('bs.enkoffcanvas')
       var options = $.extend({}, EnkOffCanvas.DEFAULTS, $this.data(), typeof option === 'object' && option)
 
-      if (!data) $this.data('bs.enkoffcanvas', (data = new EnkOffCanvas(this, $(option.source), options)))
+      if (!data) $this.data('bs.enkoffcanvas', (data = new EnkOffCanvas(this, $(option.sidebar), options)))
       if (typeof option === 'string') data[option]()
     })
   }
@@ -103,7 +80,7 @@
   $(document).on('click.bs.enkoffcanvas.data-api', '[data-toggle=enkoffcanvas]', function(e) {
     var $this = $(this),
       href
-    var target = $this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
+    var target = $this.attr('data-content') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
     var $canvas = $(target)
     var data = $canvas.data('bs.enkoffcanvas')
     var option = data ? 'toggle' : $this.data()
@@ -116,7 +93,7 @@
       data = $canvas.data('bs.enkoffcanvas')
     }
 
-    data.toggle($this.attr('data-canvas'));
+    data.toggle($this.attr('data-panel'));
   })
 
 }(window.jQuery);
