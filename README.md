@@ -4,11 +4,11 @@ Enk jquery extensions
 ## offcanvas
 
 ```html
-<button type="button" data-toggle="enkoffcanvas" data-target="#content"
-		data source="#sidebar" data-canvas="#p1">Panel 1
+<button type="button" data-toggle="enkoffcanvas" data-content="#content"
+		data-sidebar="#sidebar" data-panel="#p1">Panel 1
 </button>
-<button type="button" data-toggle="enkoffcanvas" data-target="#content" 
-		data-source="#sidebar" data-canvas="#p2">Panel 2
+<button type="button" data-toggle="enkoffcanvas" data-content="#content"
+		data-sidebar="#sidebar" data-panel="#p2">Panel 2
 </button>
 
 <div class="row enk-offcanvas-container" id="row-main">
