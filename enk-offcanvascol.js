@@ -43,6 +43,7 @@
       this.$sidepanel.toggleClass("enk-offcanvas-collapsed");
       this.$element.toggleClass("col-lg-12 col-lg-9");
       this.$element.toggleClass("col-md-12 col-md-9");
+      this.$element.toggleClass("col-sm-12 col-sm-9");
       this.$element.toggleClass("col-xs-12 col-xs-9");
     }
   }
