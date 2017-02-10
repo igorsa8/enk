@@ -34,6 +34,12 @@
 
       updateState = true;
     }
+    
+    if (this.model !== model) {
+      updateState = true;
+    }
+
+    this.model = model;
 
     var changeState = this.isOpen != updateState;
 
