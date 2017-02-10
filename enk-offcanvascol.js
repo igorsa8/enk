@@ -11,6 +11,7 @@
 
     this.isOpen = false;
     this.activePanel = '';
+    this.model = null;
   }
 
   EnkOffCanvas.DEFAULTS = {
@@ -18,7 +19,7 @@
     autohide: true,
   }
 
-  EnkOffCanvas.prototype.toggle = function(panel) {
+  EnkOffCanvas.prototype.toggle = function(panel, model) {
 
     var updateState = !this.isOpen;
 
@@ -95,8 +96,10 @@
       $canvas.enkoffcanvas(option)
       data = $canvas.data('bs.enkoffcanvas')
     }
+    
+    console.log($this.attr('data-model'));
 
-    data.toggle($this.attr('data-panel'));
+    data.toggle($this.attr('data-panel'), $this.attr('data-model'));
   })
 
 }(window.jQuery);
