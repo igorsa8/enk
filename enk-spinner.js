@@ -1,3 +1,8 @@
+/*
+http://tobiasahlin.com/spinkit/
+http://codetunnel.io/how-to-do-loading-spinners-the-angular-way/
+*/
+
 angular.module('enkSpinners', [])
   .factory('spinnerService', function () {
     var spinners = {};
