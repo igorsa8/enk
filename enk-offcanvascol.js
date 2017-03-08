@@ -48,12 +48,10 @@
     // state change
     if (changeState) {
       this.$sidepanel.toggleClass("enk-offcanvas-collapsed");
-      this.$element.toggleClass("col-lg-10 col-lg-7 col-md-10 col-md-7 col-sm-9 col-sm-6 col-xs-9 col-xs-6");
-      /*this.$element.toggleClass("col-lg-12 col-lg-9");
-      this.$element.toggleClass("col-md-12 col-md-9");
-      this.$element.toggleClass("col-sm-12 col-sm-9");
-      this.$element.toggleClass("col-xs-12 col-xs-9");
-      */
+      
+      var css = this.$element.attr('data-toggle-class') || 'col-lg-10 col-lg-7 col-md-10 col-md-7 col-sm-9 col-sm-6 col-xs-9 col-xs-6'
+      
+      this.$element.toggleClass(css);
     }
   }
 
