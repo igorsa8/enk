@@ -39,3 +39,31 @@
     transform: scale(1.0);
   }
 }
+
+/* spinner variants */
+
+.spinner.full-height {
+    position: absolute;
+    width: 100%;
+    right: 0px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.30);
+    margin-top: 0;
+}
+
+.spinner.full-height > div {
+  margin-top: 50%;
+}
+
+.spinner.spinner-inline {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.spinner.spinner-inline > div {
+    width: 12px;
+    height: 12px;
+ }
