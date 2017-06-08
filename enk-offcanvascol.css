@@ -11,7 +11,7 @@
 }
 
 .enk-offcanvas-collapsed {
-  margin-right: -25%;
+  margin-right: -100%;
 }
 
 .enk-offcanvas-panel-hidden {
@@ -20,4 +20,12 @@
 
 .enk-offcanvas-panel-visible {
   display: block;
+}
+
+@media (max-width: 767px) {
+  
+  .enk-offcanvas-sidebar.enk-xs-over {
+    position: absolute;
+    right:0;
+  }
 }
